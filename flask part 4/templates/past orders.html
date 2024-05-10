@@ -1,0 +1,16 @@
+{% include "header.html" %}
+
+<h1>Past Orders</h1>
+
+{% if session["user"] is defined %}
+<ul>
+    {% for p in pastorder_list %}
+        <li>{{p["details"]}}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div>No orders have been made yet.</div>
+<a href='/products'>Order</a>
+
+{% include "footer.html" %}
